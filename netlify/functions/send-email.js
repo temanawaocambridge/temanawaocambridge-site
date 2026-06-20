@@ -24,7 +24,8 @@ exports.handler = async (event) => {
     // Notification to support@
     await resend.emails.send({
       from: 'Te Manawa o Cambridge <support@temanawaocambridge.org.nz>',
-      to: 'support@temanawaocambridge.org.nz',
+      to: 'raylene@temanawaocambridge.org.nz',
+      cc: 'cherese@matou.nz',
       replyTo: email,
       subject: `New website enquiry — ${subject || 'General'} from ${name}`,
       text: `
@@ -57,7 +58,7 @@ Sent from the Te Manawa o Cambridge website.
     await resend.emails.send({
       from: 'Te Manawa o Cambridge <support@temanawaocambridge.org.nz>',
       to: email,
-      replyTo: 'support@temanawaocambridge.org.nz',
+      replyTo: 'raylene@temanawaocambridge.org.nz',
       subject: `Kia ora ${name} — we've received your message`,
       text: `
 Kia ora ${name},
