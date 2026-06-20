@@ -1,9 +1,9 @@
 <template>
   <div class="page-hero">
     <div class="container">
-      <p class="eyebrow">Ō mātou hoa mahi</p>
-      <h1>Our Partners</h1>
-      <p>We work alongside a network of local businesses, health providers, and community organisations to support whānau across Cambridge and the wider Waipā.</p>
+      <p class="eyebrow">Ō mātou kaiāwhina</p>
+      <h1>Our Supporters</h1>
+      <p>Over the years, so many local businesses, organisations, and community members have shown up for Te Manawa and the whānau we serve. This page is our way of saying thank you.</p>
     </div>
   </div>
 
@@ -11,7 +11,7 @@
     <div class="container">
 
       <!-- Filter tabs -->
-      <div class="filter-bar" role="group" aria-label="Filter partners by category">
+      <div class="filter-bar" role="group" aria-label="Filter supporters by category">
         <button
           v-for="cat in categories"
           :key="cat"
@@ -39,7 +39,7 @@
           :class="{ 'no-link': !partner.website }"
           :aria-label="partner.website ? `${partner.name} — visit website` : partner.name"
         >
-          <div class="card-logo">
+          <div class="card-logo" :style="partner.bgColor ? { background: partner.bgColor } : {}">
             <img v-if="partner.logo || partner.logoUrl" :src="partner.logo || partner.logoUrl" :alt="`${partner.name} logo`" />
             <span v-else class="logo-placeholder" aria-hidden="true">{{ initials(partner.name) }}</span>
           </div>
@@ -59,10 +59,11 @@
       <!-- CTA -->
       <div class="partner-cta card">
         <div class="cta-text">
-          <h3>Want to work with us?</h3>
-          <p>We're always looking for local businesses and organisations who share our values. Get in touch to explore how we can support each other.</p>
+          <h3>Want to support us?</h3>
+          <p>We're always grateful for support from local businesses and organisations who share our values. Get in touch to explore how we can work together.</p>
         </div>
         <RouterLink to="/contact" class="btn btn-primary">Get in Touch</RouterLink>
+
       </div>
 
     </div>
@@ -185,8 +186,8 @@ function initials(name) {
 .partner-card.no-link { cursor: default; }
 
 .card-logo {
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  height: 120px;
   border-radius: 12px;
   overflow: hidden;
   background: var(--gray-50, #f9fafb);
@@ -201,7 +202,7 @@ function initials(name) {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 6px;
+  padding: 16px;
 }
 .logo-placeholder {
   font-family: var(--font-head);

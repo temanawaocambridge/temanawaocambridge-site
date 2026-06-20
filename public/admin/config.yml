@@ -7,8 +7,8 @@ public_folder: /uploads
 
 collections:
   - name: partners
-    label: Partners
-    label_singular: Partner
+    label: Supporters
+    label_singular: Supporter
     folder: content/partners
     create: true
     delete: true
@@ -54,6 +54,12 @@ collections:
         widget: string
         required: false
         hint: "Alternatively, paste a link to the logo image, e.g. https://example.co.nz/logo.png — only needed if you're not uploading one above."
+
+      - label: Logo Background Colour
+        name: bgColor
+        widget: string
+        required: false
+        hint: "Background colour for the logo box, e.g. #ffffff or #e8f4fd. Leave blank for the default light grey."
 
       - label: Display Order
         name: order

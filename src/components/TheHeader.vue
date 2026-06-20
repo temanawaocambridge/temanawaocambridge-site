@@ -46,7 +46,7 @@ const links = [
   { to: '/about', label: 'About' },
   { to: '/events', label: 'Events' },
   { to: '/news', label: 'News' },
-  { to: '/partners', label: 'Partners' },
+  { to: '/supporters', label: 'Supporters' },
   { to: '/contact', label: 'Contact' },
 ]
 
