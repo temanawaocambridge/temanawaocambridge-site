@@ -12,9 +12,12 @@
       </nav>
 
       <div class="nav-actions">
-        <RouterLink to="/donate" class="btn btn-donate">
+        <!-- <RouterLink to="/donate" class="btn btn-donate">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           Tākoha
+        </RouterLink> -->
+        <RouterLink to="/contact" class="btn btn-lg btn-donate">
+          Get Support?
         </RouterLink>
         <button class="burger" @click="open = !open" :aria-expanded="open.toString()" aria-controls="mobile-menu" aria-label="Toggle menu">
           <span :class="{ open }"></span>
@@ -26,7 +29,8 @@
 
     <nav id="mobile-menu" class="mobile-nav" :class="{ open }" aria-label="Mobile navigation">
       <RouterLink v-for="l in links" :key="l.to" :to="l.to" class="mobile-link" @click="open = false">{{ l.label }}</RouterLink>
-      <RouterLink to="/donate" class="btn btn-donate mobile-donate" @click="open = false">Tākoha / Donate</RouterLink>
+      <!-- <RouterLink to="/donate" class="btn btn-donate mobile-donate" @click="open = false">Tākoha / Donate</RouterLink> -->
+       <RouterLink to="/contact" class="btn btn-lg btn-donate" @click="open = false">Get Support</RouterLink>
     </nav>
   </header>
 </template>

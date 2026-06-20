@@ -96,7 +96,7 @@
       </div>
       <div class="donate-btns">
         <RouterLink to="/contact" class="btn btn-lg donate-cta-btn">Get In Touch</RouterLink>
-        <RouterLink to="/donate" class="btn btn-lg btn-ghost">Donate</RouterLink>
+        <!-- <RouterLink to="/donate" class="btn btn-lg btn-ghost">Donate</RouterLink> -->
       </div>
     </div>
   </section>

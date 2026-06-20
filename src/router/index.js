@@ -6,7 +6,7 @@ const routes = [
   { path: '/about', component: () => import('../views/About.vue') },
   { path: '/events', component: () => import('../views/Events.vue') },
   { path: '/news', component: () => import('../views/News.vue') },
-  { path: '/donate', component: () => import('../views/Donate.vue') },
+  // { path: '/donate', component: () => import('../views/Donate.vue') },
   { path: '/contact', component: () => import('../views/Contact.vue') },
 ]
 

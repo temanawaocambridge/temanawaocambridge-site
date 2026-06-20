@@ -30,7 +30,8 @@
   --border:     #e4e8f0;
 
   /* Typography */
-  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  /* --font-head: 'Space Grotesk', system-ui, sans-serif; */
+  --font-head: 'DM Sans', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
 
   /* Spacing */

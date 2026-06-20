@@ -25,7 +25,7 @@
         <div class="col">
           <h4>Get Involved</h4>
           <RouterLink to="/events" class="foot-link">Upcoming Events</RouterLink>
-          <RouterLink to="/donate" class="foot-link">Tākoha / Donate</RouterLink>
+          <!-- <RouterLink to="/donate" class="foot-link">Tākoha / Donate</RouterLink> -->
           <RouterLink to="/contact" class="foot-link">Volunteer</RouterLink>
           <RouterLink to="/contact" class="foot-link">Room Hire</RouterLink>
         </div>
