@@ -25,32 +25,27 @@ exports.handler = async (event) => {
     await resend.emails.send({
       from: 'Te Manawa o Cambridge <support@temanawaocambridge.org.nz>',
       to: 'raylene@temanawaocambridge.org.nz',
-      cc: 'cherese@matou.nz',
+      cc: ['inbox@temanawaocambridge.org.nz'],
       replyTo: email,
       subject: `New website enquiry — ${subject || 'General'} from ${name}`,
       text: `
 Kia ora,
 
-You have a new message from the Te Manawa o Cambridge website.
+You've got a new message from the Te Manawa o Cambridge website.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FROM
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Name:     ${name}
-Email:    ${email}
-Phone:    ${phone || 'Not provided'}
+${name} got in touch about: ${subject || 'General enquiry'}
 
-THEY SAID
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Topic:    ${subject || 'General enquiry'}
+Here's what they said:
+"${message}"
 
-${message}
+You can reach them at:
+📧 ${email}
+📞 ${phone || 'No phone provided'}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-To reply, hit reply or contact them at ${email}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Just hit reply to respond directly to ${name}.
 
-Sent from the Te Manawa o Cambridge website.
+Ngā mihi,
+Te Manawa o Cambridge Website
       `.trim(),
     })
 
