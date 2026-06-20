@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: partners
+    label: Partners
+    label_singular: Partner
+    folder: content/partners
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: name
+    summary: "{{name}} — {{category}}"
+    fields:
+      - label: Organisation Name
+        name: name
+        widget: string
+        hint: Full name of the partner organisation or business.
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Health
+          - Education
+          - Business
+          - Community
+        hint: Choose the category that best fits this partner.
+
+      - label: Short Description
+        name: description
+        widget: text
+        hint: One or two sentences about this partner and how you work together. Keep it brief and plain.
+
+      - label: Website URL
+        name: website
+        widget: string
+        hint: "Full web address, e.g. https://www.example.co.nz"
+        required: false
+
+      - label: Logo (upload)
+        name: logo
+        widget: image
+        required: false
+        hint: Upload the partner's logo directly. A square or landscape PNG/JPG works best.
+
+      - label: Logo URL (link)
+        name: logoUrl
+        widget: string
+        required: false
+        hint: "Alternatively, paste a link to the logo image, e.g. https://example.co.nz/logo.png — only needed if you're not uploading one above."
+
+      - label: Display Order
+        name: order
+        widget: number
+        default: 99
+        required: false
+        hint: Lower numbers appear first within their category. Leave as 99 to sort alphabetically.
