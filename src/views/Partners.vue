@@ -39,7 +39,7 @@
           :class="{ 'no-link': !partner.website }"
           :aria-label="partner.website ? `${partner.name} — visit website` : partner.name"
         >
-          <div class="card-logo" :style="partner.bgColor ? { background: partner.bgColor } : {}">
+          <div class="card-logo" :class="{ 'no-bg': !partner.bgColor }" :style="partner.bgColor ? { background: partner.bgColor } : {}">
             <img v-if="partner.logo || partner.logoUrl" :src="partner.logo || partner.logoUrl" :alt="`${partner.name} logo`" />
             <span v-else class="logo-placeholder" aria-hidden="true">{{ initials(partner.name) }}</span>
           </div>
@@ -203,6 +203,11 @@ function initials(name) {
   height: 100%;
   object-fit: contain;
   padding: 16px;
+}
+.card-logo.no-bg img {
+  object-fit: cover;
+  padding: 0;
+  border-radius: 10px;
 }
 .logo-placeholder {
   font-family: var(--font-head);
