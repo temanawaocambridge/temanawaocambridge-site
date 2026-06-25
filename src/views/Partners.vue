@@ -40,7 +40,7 @@
           :aria-label="partner.website ? `${partner.name} — visit website` : partner.name"
         >
           <div class="card-logo" :class="{ 'no-bg': !partner.bgColor }" :style="partner.bgColor ? { background: partner.bgColor } : {}">
-            <img v-if="partner.logo || partner.logoUrl" :src="partner.logo || partner.logoUrl" :alt="`${partner.name} logo`" />
+            <img v-if="(partner.logo || partner.logoUrl) && !imgErrors.has(partner.name)" :src="partner.logo || partner.logoUrl" :alt="`${partner.name} logo`" @error="imgErrors.add(partner.name)" />
             <span v-else class="logo-placeholder" aria-hidden="true">{{ initials(partner.name) }}</span>
           </div>
           <div class="card-body">
@@ -86,6 +86,7 @@ const categoryOrder = ['Health', 'Education', 'Business', 'Community']
 const categories = ['All', ...categoryOrder]
 
 const activeCategory = ref('All')
+const imgErrors = ref(new Set())
 
 const filtered = computed(() =>
   activeCategory.value === 'All'
