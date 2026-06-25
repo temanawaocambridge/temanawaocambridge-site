@@ -41,7 +41,7 @@
         >
           <div class="card-logo" :class="{ 'no-bg': !partner.bgColor }" :style="partner.bgColor ? { background: partner.bgColor } : {}">
             <img v-if="(partner.logo || partner.logoUrl) && !imgErrors.has(partner.name)" :src="partner.logo || partner.logoUrl" :alt="`${partner.name} logo`" @error="imgErrors.add(partner.name)" />
-            <span v-else class="logo-placeholder" aria-hidden="true">{{ initials(partner.name) }}</span>
+            <span v-else class="logo-placeholder" aria-hidden="true" :style="{ color: textColor(partner.bgColor) }">{{ partner.name }}</span>
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -94,13 +94,15 @@ const filtered = computed(() =>
     : partners.filter(p => p.category === activeCategory.value)
 )
 
-function initials(name) {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map(w => w[0].toUpperCase())
-    .join('')
+function textColor(hex) {
+  if (!hex) return '#1a1a2e'
+  const c = hex.replace('#', '')
+  const r = parseInt(c.slice(0, 2), 16)
+  const g = parseInt(c.slice(2, 4), 16)
+  const b = parseInt(c.slice(4, 6), 16)
+  // relative luminance
+  const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+  return lum > 0.5 ? '#1a1a2e' : '#ffffff'
 }
 </script>
 
@@ -213,9 +215,12 @@ function initials(name) {
 .logo-placeholder {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--navy);
-  letter-spacing: -0.02em;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  text-align: center;
+  padding: 12px;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
 .card-body { display: flex; flex-direction: column; flex: 1; }
