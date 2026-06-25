@@ -169,7 +169,7 @@ const team = [
   { name: 'Dwain Reuben',    role: 'Co-Founder & Leader', initials: 'DR', color: 'var(--navy)' },
   { name: 'Manda Alexander', role: 'Community Support',   initials: 'MA', color: 'var(--green)' },
   { name: 'Annette Peake',   role: 'Community Support',   initials: 'AP', color: 'var(--purple)' },
-  { name: 'Sal Maxwell',     role: 'Community Support',   initials: 'SM', color: 'var(--orange)' },
+  { name: 'Ayesha Newport',     role: 'Community Support',   initials: 'SM', color: 'var(--orange)' },
 ]
 
 const trustees = [
@@ -177,7 +177,7 @@ const trustees = [
   { name: 'Cherese Eriepa', role: 'Secretary',   initials: 'CE', color: 'var(--green)' },
   { name: 'Tynaya Mane',    role: 'Treasurer',   initials: 'TM', color: 'var(--purple)' },
   { name: 'Andrea Ruff',    role: 'Trustee',     initials: 'AR', color: 'var(--orange)' },
-  { name: 'Aroha Herewini', role: 'Trustee',     initials: 'AH', color: 'var(--red)' },
+  { name: 'Aroha Herewini', role: 'Trustee',     initials: 'AH', color: 'var(--red)' }
 ]
 </script>
 
