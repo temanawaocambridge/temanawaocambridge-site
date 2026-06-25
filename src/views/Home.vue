@@ -216,11 +216,6 @@ h1 {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(247,200,49,0.3) 0%, transparent 70%);
   filter: blur(40px);
-  animation: pulse 4s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50%       { transform: scale(1.1); opacity: 1; }
 }
 .hero-logo {
   width: 360px;
@@ -228,11 +223,6 @@ h1 {
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.35));
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
 }
 .hero-rainbow { height: 6px; flex-shrink: 0; }
 
